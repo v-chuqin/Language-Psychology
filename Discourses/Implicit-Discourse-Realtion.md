@@ -1,10 +1,8 @@
 # Implicit Discourse Relation
 
-### Data-set
+## Data-set
 
-_______
-
-#### PDTB-2.0
+### PDTB-2.0
 
 1. Penn Discourse TreeBank 2.0](https://www.seas.upenn.edu/~pdtb/papers/pdtb-lrec08.pdf) describing its lexically-grounded annotations of discourse relations and their two abstract object arguments over the 1 million word Wall Street Journal corpus. 
 2. This data-set can be broadly characterized into two types: 
@@ -40,8 +38,7 @@ _______
    | Total          | 40600         |
 
 4. 4 major semantic classes: **TEMPORAL**, **CONTINGENCY**, **COMPARISON** and **EXPANSION**.
-
-
-<img src="semantic-classes.PNG" width="50%" height="50%">
+   <img src="semantic-classes.PNG" width="50%" height="50%">
 
 5. ​
+
