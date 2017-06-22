@@ -42,6 +42,6 @@ _______
 4. 4 major semantic classes: **TEMPORAL**, **CONTINGENCY**, **COMPARISON** and **EXPANSION**.
 
 
-![semantic-classes](https://github.com/v-chuqin/Language-Psychology/blob/master/Discourses/semantic-classes.PNG =200)
+<img src="semantic-classes.PNG" width="50%" height="50%">
 
 5. ​
