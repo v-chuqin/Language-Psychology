@@ -1,6 +1,6 @@
 # Implicit Discourse Relation
 
-### Data-size
+### Data-set
 
 > PDTB
 
