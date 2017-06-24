@@ -41,14 +41,17 @@
 4. 4 major semantic classes: **TEMPORAL**, **CONTINGENCY**, **COMPARISON** and **EXPANSION**.
    <img src="semantic-classes.PNG" width="50%" height="50%">
 
-   | “CLASS” Explicit (18459) | Implicit (16224) | AltLex (624) | Total |
-   | :----------------------- | ---------------- | ------------ | ----- |
-   | TEMPORAL                 | 3612             | 950          | 88    |
-   | CONTINGENCY              | 3581             | 4185         | 276   |
-   | COMPARISON               | 5516             | 2832         | 46    |
-   | EXPANSION                | 6424             | 8861         | 221   |
-   | **Total**                | 19133            | 16828        | 634   |
+| “CLASS”       | Explicit (18459) | Implicit (16224) | AltLex (624) | Total |
+| :------------ | ---------------- | ---------------- | ------------ | ----- |
+| “TEMPORAL”    | 3612             | 950              | 88           | 4650  |
+| “CONTINGENCY” | 3581             | 4185             | 276          | 8042  |
+| “COMPARISON”  | 5516             | 2832             | 46           | 8394  |
+| “EXPANSION”   | 6424             | 8861             | 221          | 15506 |
+| Total         | 19133            | 16828            | 634          | 36592 |
+
 
 5. Download from https://catalog.ldc.upenn.edu/LDC2008T05 / https://github.com/cgpotts/pdtb2
+
+   suggest reading:  http://compprag.christopherpotts.net/pdtb.html
 
    ​
