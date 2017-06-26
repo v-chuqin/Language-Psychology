@@ -25,9 +25,9 @@
    > - **domain2_score**: Resolved score between the raters; only essays in set 2 have this
    >
    > - **rater1\_trait1 score - rater3_trait6 score**: trait scores for sets 7-8
-   >
 
- 3. Valid-set
+
+3. Valid-set
 
    > - **essay_id**: A unique identifier for each individual student essay
    > - **essay_set**: 1-8, an id for each set of essays
