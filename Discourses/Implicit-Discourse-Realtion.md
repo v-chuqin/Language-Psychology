@@ -137,3 +137,7 @@
 
 2. [A Stacking Gated Neural Architecture for Implicit Discourse Relation Classification](http://anthology.aclweb.org/D/D16/D16-1246.pdf)
 
+3. [Automatic sense prediction for implicit discourse relations in text](http://www.aclweb.org/anthology/P/P09/P09-1077.pdf) _Pitler, 2009_
+
+   ​
+
