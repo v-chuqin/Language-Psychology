@@ -139,5 +139,7 @@
 
 3. [Automatic sense prediction for implicit discourse relations in text](http://www.aclweb.org/anthology/P/P09/P09-1077.pdf) _Pitler, 2009_
 
-   ​
+   This is the first paper which reports result on classifying naturally occurring **implicit** relations in text.
 
+
+​       Key point: semantic word pairs, also using the features like Inquirer Tags, Number, text spans(N-grams), with TextRels knowledge, Verbs, First words/end words, modality, context
