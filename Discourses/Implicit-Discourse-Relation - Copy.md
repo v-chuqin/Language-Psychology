@@ -7,25 +7,30 @@
 1. [Penn Discourse TreeBank 2.0](https://www.seas.upenn.edu/~pdtb/papers/pdtb-lrec08.pdf) describing its lexically-grounded annotations of discourse relations and their two abstract object arguments over the 1 million word Wall Street Journal corpus. 
 
 2. This data-set can be broadly characterized into __two types__: 
-   * **Explicit**
 
-     *  subordinating conjunctions (e.g., because, when, etc.)
+   - **Explicit**
 
-         > E.g., Michelle lives in a hotel room, and **although** she drives a canary-colored Porsche, she hasn’t time to clean or repair it.
+     - subordinating conjunctions (e.g., because, when, etc.)
 
-     *   coordinating conjunctions (e.g., and, or, etc.)
+       > E.g., Michelle lives in a hotel room, and **although** she drives a canary-colored Porsche, she hasn’t time to clean or repair it.
 
-     *  discourse adverbials (e.g., for example, instead, etc.)
-   * **Implicit**
+     - coordinating conjunctions (e.g., and, or, etc.)
+
+     - discourse adverbials (e.g., for example, instead, etc.)
+
+   - **Implicit**
+
      > E.g., But a few funds have taken other defensive steps. Some have raised their cash positions to record levels. **Implicit = BECAUSE** High cash positions help buffer a fund when the market falls.
 
-   * AltLex: express an inferred elation led to a redundancy
+   - AltLex: express an inferred elation led to a redundancy
+
      > E.g., Ms. Bartlett’s previous work, which earned her an international reputation in the non-horticultural art world, often took gardens as its nominal subject. **AltLex** <u>Mayhap this metaphorical connection made</u> the BPC Fine Arts Committee think she had a literal green thumb
-   * EntRel: entitybased coherence
 
-      > E.g., Hale Milgrim, 41 years old, senior vice president, marketing at Elecktra Entertainment Inc., was named president of Capitol Records Inc., a unit of this entertainment concern. **EntRel** <u>Mr. Milgrim succeeds David Berman, who resigned last month.</u>
+   - EntRel: entitybased coherence
 
-   * NoRel: no discourse relation or entity-based relationt
+     > E.g., Hale Milgrim, 41 years old, senior vice president, marketing at Elecktra Entertainment Inc., was named president of Capitol Records Inc., a unit of this entertainment concern. **EntRel** <u>Mr. Milgrim succeeds David Berman, who resigned last month.</u>
+
+   - NoRel: no discourse relation or entity-based relationt
 
 3. Distribution of Relations in PDTB-2.0
 
@@ -49,25 +54,24 @@
 | “EXPANSION”   | 6424             | 8861             | 221          | 15506 |
 | Total         | 19133            | 16828            | 634          | 36592 |
 
-
-5. Download from https://catalog.ldc.upenn.edu/LDC2008T05 / https://github.com/cgpotts/pdtb2
+1. Download from https://catalog.ldc.upenn.edu/LDC2008T05 / https://github.com/cgpotts/pdtb2
 
    suggest reading:  http://compprag.christopherpotts.net/pdtb.html
 
-6. Implicit: 16224 or 16053 ? 
+2. Implicit: 16224 or 16053 ? 
 
-  ```python
-  iterator=pdtb.CorpusReader(pdtb2.csv).iter_data(display_progress=False)
-  count = 0
-  for datum in iterator:
-  	if datum.Relation == "Implicit" and datum.Conn2SemClass1 != None:
-  	count += 1
-  # print count = 171
-  # When counted together as a single token, the total is 16053,
-  # which accounts for 171 instances of multiple connectives
-  ```
+   ```python
+   iterator=pdtb.CorpusReader(pdtb2.csv).iter_data(display_progress=False)
+   count = 0
+   for datum in iterator:
+   	if datum.Relation == "Implicit" and datum.Conn2SemClass1 != None:
+   	count += 1
+   # print count = 171
+   # When counted together as a single token, the total is 16053,
+   # which accounts for 171 instances of multiple connectives
+   ```
 
-7. [Recognizing Implicit Discourse Relations in the Penn Discourse Treebank](http://www.aclweb.org/anthology/D09-1036) 
+3. [Recognizing Implicit Discourse Relations in the Penn Discourse Treebank](http://www.aclweb.org/anthology/D09-1036) 
 
    DISTRIBUTION in Section 2-21
 
@@ -107,7 +111,9 @@
    | 'Temporal.Synchrony'                     | 213   |                        |
 
 ## Approach
+
 ### Level-2 prediction
+
 1. [Adversarial Connective-exploiting Networks for Implicit Discourse Relation Classification](https://arxiv.org/pdf/1704.00217.pdf)
 
    **Multi-classify**
@@ -124,22 +130,29 @@
    | Ji and Eisenstein (2015)         | -        | 44.59   |
    | Qin et al. (2016a)               | 43.81    | 45.04   |
    | Ours                             | 44.65    | 46.23   |
+
    **four one-versus-all binary classification**
+
    | Model                                    | COMP. | CONT. | EXP.  | TEMP. |
    | ---------------------------------------- | ----- | ----- | ----- | ----- |
-   | Pitler et al. (2009)                     | 21.96 | 47.13 | -     | 16.76 |
+   | [Pitler et al. (2009)](http://www.aclweb.org/anthology/P09-1077) | 21.96 | 47.13 | -     | 16.76 |
    | [Qin et al. (2016c)](http://anthology.aclweb.org/D/D16/D16-1246.pdf) | 41.55 | 57.32 | 71.50 | 35.43 |
-   | Zhang et al. (2016)                      | 35.88 | 50.56 | 71.48 | 29.54 |
-   | Zhou et al. (2010)                       | 31.79 | 47.16 | 70.11 | 20.30 |
-   | Liu and Li (2016)                        | 36.70 | 54.48 | 70.43 | 38.84 |
-   | Chen et al. (2016a)                      | 40.17 | 54.76 | -     | 31.32 |
+   | [Zhang et al. (2016)](https://aclweb.org/anthology/P/P16/P16-1163.pdf) | 35.88 | 50.56 | 71.48 | 29.54 |
+   | [Zhou et al. (2010)](http://www.aclweb.org/anthology/C10-2172) | 31.79 | 47.16 | 70.11 | 20.30 |
+   | [Liu and Li (2016)](https://arxiv.org/pdf/1609.06380.pdf) | 36.70 | 54.48 | 70.43 | 38.84 |
+   | [Chen et al. (2016a)](https://aclweb.org/anthology/P/P16/P16-1163.pdf) | 40.17 | 54.76 | -     | 31.32 |
    | Ours                                     | 40.87 | 54.56 | 72.38 | 36.20 |
 
-2. [A Stacking Gated Neural Architecture for Implicit Discourse Relation Classification](http://anthology.aclweb.org/D/D16/D16-1246.pdf)
+2. [Variational Neural Discourse Relation Recognizer](https://arxiv.org/pdf/1603.03876.pdf): Zhang et al. 2016
 
 3. [Automatic sense prediction for implicit discourse relations in text](http://www.aclweb.org/anthology/P/P09/P09-1077.pdf) _Pitler, 2009_
 
-   This is the first paper which reports result on classifying naturally occurring **implicit** relations in text.
-
+   This is the first paper which reports result on classifying naturally occurring **implicit** relations in text. Pitler et al. (2009)
 
 ​       Key point: semantic word pairs, also using the features like Inquirer Tags, Number, text spans(N-grams), with TextRels knowledge, Verbs, First words/end words, modality, context
+
+4. [A Stacking Gated Neural Architecture for Implicit Discourse Relation Classification.](http://anthology.aclweb.org/D/D16/D16-1246.pdf) Qin et al. (2016c) Using the Convolutional neural network and collaborative gated neural network. 
+5. [Predicting Discourse Connectives for Implicit Discourse Relation Recognition](http://www.aclweb.org/anthology/C10-2172) Zhou et al. (2010) 
+6. [Recognizing Implicit Discourse Relations via Repeated Reading: Neural Networks with Multi-Level Attention](https://arxiv.org/pdf/1609.06380.pdf) Liu and Li (2016)
+7. [Implicit Discourse Relation Detection via a Deep Architecture with Gated Relevance Network](https://aclweb.org/anthology/P/P16/P16-1163.pdf) Chen et al. (2016a) .... RNN 
+
